@@ -52,6 +52,6 @@ if ! ${INPUT_FORCE_WITH_LEASE}; then
   ADDITIONAL_PARAMETERS="${remote_repo} HEAD:${INPUT_BRANCH}"
 fi
 
-git remote add "${remote_repo}"
+git remote add old $ADDITIONAL_PARAMETERS
 git fetch --unshallow old
 git push $ADDITIONAL_PARAMETERS $_ATOMIC_OPTION --follow-tags $_FORCE_OPTION $_TAGS;
